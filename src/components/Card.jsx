@@ -10,7 +10,7 @@ function Card({ title, description = 'This is card 1', children, component: Comp
   })
 
   return (
-    <div>
+    <div className='green'>
       {children}
       <br />
       Demo: props is react component: <Component /> <br/>

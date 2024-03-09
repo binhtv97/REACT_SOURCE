@@ -1,0 +1,29 @@
+:root {
+    --color-primay: #1677ff;
+    --color-secondary: #13c2c2;
+
+    --bg-prinmary: #F7F8F8;
+}
+
+html[data-theme='dark'] {
+    --color-primay: #212a2e;
+    --color-secondary: #F7F8F8;
+
+    --bg-prinmary: #beb9b9;
+}
+
+#root {
+    background-color: var(--bg-prinmary);
+}
+
+.heading {
+    font-size: 18px;
+}
+
+.green {
+    color: var(--color-primay);
+}
+
+.red {
+    color: red;
+}
