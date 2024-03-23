@@ -10,6 +10,7 @@ import Button from './components/Button';
 import GenerateBoxBinh from './sample-app-binh/GenerateBoxBinh';
 import LiftingStateUp from './LiftingStateUp';
 import Form from './Form';
+import StateHook from './StateHook';
 
 /* muốn render react component JSX phải:
 - viêt PascalCase: Button, Card, Welcome, ProductList
@@ -62,6 +63,9 @@ function App() {
 
       <br />
       <GenerateBoxBinh />
+
+      <br />
+      <StateHook />
 
       <br />
       <br />
