@@ -1,4 +1,5 @@
 import React from 'react';
+import { useAppContext } from './context/AppContext';
 
 
 function initializeCount() {
@@ -9,15 +10,18 @@ function initializeCount() {
 function StateHook() {
   // const [count, setCount] = React.useState(initializeCount);
   const [count, setCount] = React.useState(initializeCount());
+  const { setCount: setAppCount } = useAppContext();
 
   function handleIncrement() {
     // batching update
     setCount(prevState => prevState + 1);
     setCount(prevState => prevState + 1);
     setCount(prevState => prevState + 1);
+
+    setAppCount(prevState => prevState + 1)
   }
 
-  console.log('stateHook')
+  console.log('StateHook render')
 
   React.useLayoutEffect(() => {
     console.log('useLayout effect')

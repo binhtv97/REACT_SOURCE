@@ -21,6 +21,9 @@ import StateHook from './StateHook';
 
 function App() {
 
+  console.log('App render')
+
+
   function onChangeTheme() {
     const currentTheme = document.documentElement.getAttribute("data-theme");
 

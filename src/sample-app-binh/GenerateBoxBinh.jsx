@@ -1,6 +1,11 @@
 import React from 'react'
+import { useAppContext } from '../context/AppContext'
 
 function GenerateBoxBinh() {
+  const { timestamp } = useAppContext();
+
+  console.log('GenerateBoxBinh render')
+
   function generaBox() {
    
   }
