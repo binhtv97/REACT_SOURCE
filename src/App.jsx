@@ -11,13 +11,13 @@ import GenerateBoxBinh from './sample-app-binh/GenerateBoxBinh';
 import LiftingStateUp from './LiftingStateUp';
 import Form from './Form';
 import StateHook from './StateHook';
+import RefHooks from './RefHooks';
+import SkipEffectRenderFirst from './SkipEffectRenderFirst';
 
 /* muốn render react component JSX phải:
 - viêt PascalCase: Button, Card, Welcome, ProductList
 - <NameComponent />: <Button />, <Card />, <Welcome />, <ProductList />
-
 */
-
 
 function App() {
 
@@ -70,6 +70,12 @@ function App() {
       <br />
       <StateHook />
 
+      <br />
+      <RefHooks />
+
+      <br />
+      <SkipEffectRenderFirst />
+      
       <br />
       <br />
       <br />
