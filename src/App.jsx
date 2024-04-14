@@ -13,6 +13,8 @@ import Form from './Form';
 import StateHook from './StateHook';
 import RefHooks from './RefHooks';
 import SkipEffectRenderFirst from './SkipEffectRenderFirst';
+import PerformanceHook from './PerformanceHook';
+import CustomHooks from './CustomHooks';
 
 /* muốn render react component JSX phải:
 - viêt PascalCase: Button, Card, Welcome, ProductList
@@ -75,6 +77,12 @@ function App() {
 
       <br />
       <SkipEffectRenderFirst />
+
+      <br />
+      <PerformanceHook />
+
+      <br />
+      <CustomHooks />
       
       <br />
       <br />
