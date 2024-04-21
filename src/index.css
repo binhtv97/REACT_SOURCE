@@ -84,3 +84,15 @@ html[data-theme='dark'] {
     background-color: #fff;
     box-shadow: 3px 3px 4px 1px #1677ff;
 }
+nav {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    padding: 0 10px;
+}
+
+nav li a.active {
+    color:aqua
+}

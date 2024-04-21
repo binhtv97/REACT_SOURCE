@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link, NavLink, Route, Routes } from 'react-router-dom';
+
 import ReactJSX from './ReactJSX';
 import Props from './Props';
 import State from './State';
@@ -16,6 +18,9 @@ import SkipEffectRenderFirst from './SkipEffectRenderFirst';
 import PerformanceHook from './PerformanceHook';
 import CustomHooks from './CustomHooks';
 import ReactPortal from './ReactPortal';
+import User from './components/Outlet/User';
+import Profile from './components/Outlet/Profile';
+import Account from './components/Outlet/Account';
 
 /* muốn render react component JSX phải:
 - viêt PascalCase: Button, Card, Welcome, ProductList
@@ -47,22 +52,36 @@ function App() {
   return (
     <>
 
+      <nav>
+        <li><Link to="/react-jsx">React JSX</Link></li>
+        <li><Link to="/props">Props</Link></li>
+        <li><Link to="/state">State</Link></li>
+        <li><NavLink to="/component" replace>Component</NavLink></li>
+        <li><NavLink to="/user" replace>User</NavLink></li>
+      </nav>
+
+      <br />
+
+      <Routes>
+        <Route path="/react-jsx" element={<ReactJSX />} />
+        <Route path="/props" element={<Props />} />
+        <Route path="/state" element={<State />} />
+        <Route path="/component" element={<Component />} />
+        <Route path="/user" element={<User />}>
+          <Route path="profile" element={<Profile />} />
+          <Route path="account" element={<Account />} />
+        </Route>
+        
+      </Routes>
+
+
+      <br /><br /> <hr/>
+
       <Button 
         text="Change theme"
         onClick={onChangeTheme}
       />
       
-      <ReactJSX />
-
-      <br />
-      <Props />
-
-      <br />
-      <State />
-
-      <br />
-      <Component />
-
       <br />
       <ConditionalRendering />
 
