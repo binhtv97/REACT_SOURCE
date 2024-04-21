@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import ReactJSX from './ReactJSX';
 import Props from './Props';
 import State from './State';
@@ -15,6 +15,7 @@ import RefHooks from './RefHooks';
 import SkipEffectRenderFirst from './SkipEffectRenderFirst';
 import PerformanceHook from './PerformanceHook';
 import CustomHooks from './CustomHooks';
+import ReactPortal from './ReactPortal';
 
 /* muốn render react component JSX phải:
 - viêt PascalCase: Button, Card, Welcome, ProductList
@@ -24,6 +25,17 @@ import CustomHooks from './CustomHooks';
 function App() {
 
   console.log('App render')
+
+  // send error log when has online
+  React.useEffect(() => {
+    const error_log = window.localStorage.getItem('error_log');
+    if(!error_log) return;
+    if(window.navigator.onLine) {
+      // send error log on BE
+      // delete localstorage error_log
+      console.log('send error log on BE')
+    }
+  },[])
 
 
   function onChangeTheme() {
@@ -83,6 +95,9 @@ function App() {
 
       <br />
       <CustomHooks />
+
+      <br />
+      <ReactPortal />
       
       <br />
       <br />

@@ -71,3 +71,16 @@ html[data-theme='dark'] {
     height: 70px;
     padding: 10px;
 }
+
+.portal1 {
+    position: relative;
+    overflow: hidden;
+}
+
+.portal-modal {
+    position: absolute;
+    top: 50%;
+    height: 50%;
+    background-color: #fff;
+    box-shadow: 3px 3px 4px 1px #1677ff;
+}

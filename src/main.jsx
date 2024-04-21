@@ -5,8 +5,12 @@ import './index.css'
 
 import { AppProvider } from './context/AppContext.jsx';
 
+import { ErrorBoundaries } from './components/ErrorBoundaries.jsx';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <AppProvider>
-    <App />
+    <ErrorBoundaries>
+      <App />
+    </ErrorBoundaries>
   </AppProvider>
 )
