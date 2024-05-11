@@ -96,3 +96,7 @@ nav li {
 nav li a.active {
     color:aqua
 }
+
+ul li {
+    cursor: pointer;
+}

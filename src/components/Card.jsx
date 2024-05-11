@@ -1,6 +1,13 @@
 import React from 'react'
 
-function Card({ title, description = 'This is card 1', children, component: Component, component2,...restProps}) {
+function Card({ 
+  title, 
+  description = 'This is card 1', 
+  children, 
+  component: Component, 
+  component2,
+  ...restProps
+}) {
   console.log('card: ', {
     title,
     description,

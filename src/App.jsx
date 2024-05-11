@@ -21,6 +21,8 @@ import ReactPortal from './ReactPortal';
 import User from './components/Outlet/User';
 import Profile from './components/Outlet/Profile';
 import Account from './components/Outlet/Account';
+import Book from './components/Books/Book';
+import BookDetail from './components/Books/BookDetail';
 
 /* muốn render react component JSX phải:
 - viêt PascalCase: Button, Card, Welcome, ProductList
@@ -58,12 +60,13 @@ function App() {
         <li><Link to="/state">State</Link></li>
         <li><NavLink to="/component" replace>Component</NavLink></li>
         <li><NavLink to="/user" replace>User</NavLink></li>
+        <li><NavLink to="/book" replace>Book</NavLink></li>
       </nav>
 
       <br />
 
       <Routes>
-        <Route path="/react-jsx" element={<ReactJSX />} />
+        <Route path="/react-jsx" exact element={ReactJSX} />
         <Route path="/props" element={<Props />} />
         <Route path="/state" element={<State />} />
         <Route path="/component" element={<Component />} />
@@ -71,6 +74,8 @@ function App() {
           <Route path="profile" element={<Profile />} />
           <Route path="account" element={<Account />} />
         </Route>
+        <Route path="/book" element={<Book />} />
+        <Route path="/book/:id" element={<BookDetail />} />
         
       </Routes>
 
