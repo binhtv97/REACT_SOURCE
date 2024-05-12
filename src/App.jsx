@@ -23,6 +23,10 @@ import Profile from './components/Outlet/Profile';
 import Account from './components/Outlet/Account';
 import Book from './components/Books/Book';
 import BookDetail from './components/Books/BookDetail';
+import SignIn from './components/Signin';
+import MainLayout from './layouts/MainLayout';
+import AuthComponent from './components/AuthComponent';
+import GuestComponent from './components/GuestComponent';
 
 /* muốn render react component JSX phải:
 - viêt PascalCase: Button, Card, Welcome, ProductList
@@ -53,31 +57,25 @@ function App() {
   }
   return (
     <>
-
-      <nav>
-        <li><Link to="/react-jsx">React JSX</Link></li>
-        <li><Link to="/props">Props</Link></li>
-        <li><Link to="/state">State</Link></li>
-        <li><NavLink to="/component" replace>Component</NavLink></li>
-        <li><NavLink to="/user" replace>User</NavLink></li>
-        <li><NavLink to="/book" replace>Book</NavLink></li>
-      </nav>
-
-      <br />
-
       <Routes>
-        <Route path="/react-jsx" exact element={ReactJSX} />
-        <Route path="/props" element={<Props />} />
-        <Route path="/state" element={<State />} />
-        <Route path="/component" element={<Component />} />
-        <Route path="/user" element={<User />}>
+        <Route path="/" exact element={<AuthComponent><MainLayout><ReactJSX /></MainLayout></AuthComponent>} />
+        <Route path="/props" element={<AuthComponent><MainLayout><Props /></MainLayout></AuthComponent>} />
+        <Route path="/state" element={<AuthComponent><MainLayout><State /></MainLayout></AuthComponent>} />
+        <Route path="/component" element={<AuthComponent><MainLayout><Component /></MainLayout></AuthComponent>} />
+        <Route path="/user" element={<AuthComponent><MainLayout><User /></MainLayout></AuthComponent>}>
           <Route path="profile" element={<Profile />} />
           <Route path="account" element={<Account />} />
         </Route>
-        <Route path="/book" element={<Book />} />
-        <Route path="/book/:id" element={<BookDetail />} />
-        
+        <Route path="/book" element={<AuthComponent><MainLayout><Book /></MainLayout></AuthComponent>} />
+        <Route path="/book/:id" element={<AuthComponent><MainLayout><BookDetail /></MainLayout></AuthComponent>} />
+        <Route path="/signin" element={<GuestComponent><SignIn /></GuestComponent>} />
+        <Route path="*" element={<div>this is not page</div>} />
       </Routes>
+     
+
+      <br />
+
+     
 
 
       <br /><br /> <hr/>
