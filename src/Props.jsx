@@ -1,5 +1,8 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import Card from './components/Card';
+
+import { addTodo } from './states/todoAction';
 
 function Welcome({ title }) {
   return (
@@ -10,7 +13,16 @@ function Welcome({ title }) {
 }
 
 function Props() {
+  const dispatch = useDispatch();
   const title = 'Card 1';
+
+  function _addTodo() {
+    const newTodo = {
+      id: Date.now(),
+      title: `Todo ${Date.now()}`
+    }
+    dispatch(addTodo(newTodo))
+  }
 
   return (
     <div>
@@ -29,6 +41,8 @@ function Props() {
       >
         this is children
       </Card>
+
+      <button type="button" onClick={_addTodo}>Add Todo</button>
       
 
     </div>

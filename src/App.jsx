@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, NavLink, Route, Routes } from 'react-router-dom';
+import { Link, NavLink, Outlet, Route, Routes } from 'react-router-dom';
 
 import ReactJSX from './ReactJSX';
 import Props from './Props';
@@ -58,16 +58,33 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" exact element={<AuthComponent><MainLayout><ReactJSX /></MainLayout></AuthComponent>} />
-        <Route path="/props" element={<AuthComponent><MainLayout><Props /></MainLayout></AuthComponent>} />
-        <Route path="/state" element={<AuthComponent><MainLayout><State /></MainLayout></AuthComponent>} />
-        <Route path="/component" element={<AuthComponent><MainLayout><Component /></MainLayout></AuthComponent>} />
-        <Route path="/user" element={<AuthComponent><MainLayout><User /></MainLayout></AuthComponent>}>
-          <Route path="profile" element={<Profile />} />
-          <Route path="account" element={<Account />} />
+       
+     
+
+
+        <Route 
+          path="/"
+          element={
+            <AuthComponent>
+              <MainLayout>
+                <Outlet />
+              </MainLayout>
+            </AuthComponent>
+          }
+        >
+          <Route path="/" element={<ReactJSX />} />
+          <Route path="/props" element={<Props />} />
+          <Route path="/state" element={<State />} />
+          <Route path="/component" element={<Component />} />
+          <Route path="/user" element={<User />}>
+            <Route path="profile" element={<Profile />} />
+            <Route path="account" element={<Account />} />
+          </Route>
+          <Route path="/book" element={<Book />} />
+          <Route path="/book/:id" element={<BookDetail />} />
+          <Route path="/form" element={<Form />} />
         </Route>
-        <Route path="/book" element={<AuthComponent><MainLayout><Book /></MainLayout></AuthComponent>} />
-        <Route path="/book/:id" element={<AuthComponent><MainLayout><BookDetail /></MainLayout></AuthComponent>} />
+
         <Route path="/signin" element={<GuestComponent><SignIn /></GuestComponent>} />
         <Route path="*" element={<div>this is not page</div>} />
       </Routes>
@@ -98,7 +115,6 @@ function App() {
       <LiftingStateUp />
 
       <br />
-      <Form />
 
       <br />
       <GenerateBoxBinh />

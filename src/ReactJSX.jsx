@@ -1,11 +1,8 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 function ReactJSX() {
-  const todos = [
-    { id: 1, title: 'todo 1' },
-    { id: 2, title: 'todo 2' },
-    { id: 3, title: 'todo 3' },
-  ]
+  const todos = useSelector(state => state.todo.todos);
 
   const renderName = todos.map((todo, index) => {
     return (

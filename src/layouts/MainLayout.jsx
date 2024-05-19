@@ -19,6 +19,7 @@ function MainLayout({ children }) {
           <Link to="/user" className="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">User</Link>
           <Link to="/components" className="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">Components</Link>
           <Link to="/book" className="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">Book</Link>
+          <Link to="/form" className="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">Form</Link>
         </nav>
       </aside>
       <div className='flex flex-col w-full'>
